@@ -27,20 +27,17 @@ if(!isset($user_id)){
    <link rel="stylesheet" href="css/style.css">
 
 </head>
+<?php include 'header.php'; ?>
+
 <body>
    
-
-<div class="heading">
-   <h3>about us</h3>
-   <p> <a href="home.php">home</a> / about </p>
-</div>
 
 <section class="about">
 
    <div class="flex">
 
       <div class="image">
-         <img src="images/about-img.jpg" alt="">
+         <img src="images2/candy.jpg" alt="">
       </div>
 
       <div class="content">
@@ -67,8 +64,9 @@ if(!isset($user_id)){
    <div class="box-container">
 
       <div class="box">
-         <img src="images/pic-1.png" alt="">
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ad, quo labore fugiat nam accusamus quia. Ducimus repudiandae dolore placeat.</p>
+        
+         <p> Liked it very much!
+         </p>   
          <div class="stars">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -76,12 +74,13 @@ if(!isset($user_id)){
             <i class="fas fa-star"></i>
             <i class="fas fa-star-half-alt"></i>
          </div>
-         <h3>john deo</h3>
+         <h3>Mihai</h3>
       </div>
 
       <div class="box">
-         <img src="images/pic-2.png" alt="">
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ad, quo labore fugiat nam accusamus quia. Ducimus repudiandae dolore placeat.</p>
+      
+         <p> Love to buy from here
+         </p>   
          <div class="stars">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -89,12 +88,12 @@ if(!isset($user_id)){
             <i class="fas fa-star"></i>
             <i class="fas fa-star-half-alt"></i>
          </div>
-         <h3>john deo</h3>
+         <h3>Kitty</h3>
       </div>
 
       <div class="box">
-         <img src="images/pic-3.png" alt="">
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ad, quo labore fugiat nam accusamus quia. Ducimus repudiandae dolore placeat.</p>
+        
+        <p>Best cakes in town!</p>
          <div class="stars">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -102,47 +101,23 @@ if(!isset($user_id)){
             <i class="fas fa-star"></i>
             <i class="fas fa-star-half-alt"></i>
          </div>
-         <h3>john deo</h3>
+         <h3>Darius</h3>
       </div>
 
       <div class="box">
-         <img src="images/pic-4.png" alt="">
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ad, quo labore fugiat nam accusamus quia. Ducimus repudiandae dolore placeat.</p>
-         <div class="stars">
+         
+         <p> Made with love for love! </p>
+            <div class="stars">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="fas fa-star-half-alt"></i>
          </div>
-         <h3>john deo</h3>
+         <h3>Miruna</h3>
       </div>
 
-      <div class="box">
-         <img src="images/pic-5.png" alt="">
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ad, quo labore fugiat nam accusamus quia. Ducimus repudiandae dolore placeat.</p>
-         <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-         </div>
-         <h3>john deo</h3>
-      </div>
-
-      <div class="box">
-         <img src="images/pic-6.png" alt="">
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ad, quo labore fugiat nam accusamus quia. Ducimus repudiandae dolore placeat.</p>
-         <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-         </div>
-         <h3>john deo</h3>
-      </div>
+   
 
    </div>
 

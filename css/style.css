@@ -22,6 +22,24 @@
    transition:all .2s linear;
 }
 
+*::selection{
+   background-color: var(--purple);
+   color:var(--white);
+}
+
+*::-webkit-scrollbar{
+   height: .5rem;
+   width: 1rem;
+}
+
+*::-webkit-scrollbar-track{
+   background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb{
+   background-color: var(--purple);
+}
+
 html{
    font-size: 62.5%;
    overflow-x: hidden;
@@ -77,133 +95,134 @@ section{
    font-size: 4rem;
 }
 
-
-.about .flex{
-   max-width: 1200px;
-   margin:0 auto;
-   display: flex;
-   align-items: center;
-   flex-wrap: wrap;
+.btn,
+.option-btn,
+.delete-btn,
+.white-btn{
+   display: inline-block;
+   margin-top: 1rem;
+   padding:1rem 3rem;
+   cursor: pointer;
+   color:var(--white);
+   font-size: 1.8rem;
+   border-radius: .5rem;
+   text-transform: capitalize;
 }
 
-.about .flex .image{
-   flex:1 1 40rem;
-}
-
-.about .flex .image img{
-   width: 100%;
-}
-
-.about .flex .content{
-   flex:1 1 40rem;
-   padding:2rem;
-   background-color: var(--light-bg);
-}
-
-.about .flex .content h3{
-   font-size: 3rem;
-   color:var(--black);
-   text-transform: uppercase;
-}
-
-.about .flex .content p{
-   padding:1rem 0;
-   line-height: 2;
-   font-size: 1.7rem;
-   color:var(--light-color);
-}
-
-.home-contact{
+.btn:hover,
+.option-btn:hover,
+.delete-btn:hover{
    background-color: var(--black);
 }
 
-.home-contact .content{
-   max-width: 60rem;
-   text-align: center;
-   margin:0 auto;
+.white-btn,
+.btn{
+   background-color: var(--purple);
 }
 
-.home-contact .content h3{
-   font-size: 3rem;
-   text-transform: uppercase;
-   color:var(--white);
+.option-btn{
+   background-color: var(--orange);
 }
 
-.home-contact .content p{
-   padding:1rem 0;
-   line-height: 1.5;
-   color:var(--light-white);
-   font-size: 1.7rem;
+.delete-btn{
+   background-color: var(--red);
 }
 
-.reviews{
-   background-color: var(--light-bg);
-}
-
-.reviews .box-container{
-   max-width: 1200px;
-   margin:0 auto;
-   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-   align-items: center;
-   gap:1.5rem;
-   justify-content: center;
-}
-
-.reviews .box-container .box{
+.white-btn:hover{
    background-color: var(--white);
-   box-shadow: var(--box-shadow);
-   border:var(--border);
-   border-radius: .5rem;
-   text-align: center;
-   padding:2rem;
-}
-
-.reviews .box-container .box img{
-   height: 10rem;
-   width: 10rem;
-   border-radius: 50%;
-}
-
-.reviews .box-container .box p{
-   padding:1rem 0;
-   line-height: 2;
-   color:var(--light-color);
-   font-size: 1.5rem;
-}
-
-.reviews .box-container .box .stars{
-   background-color: var(--light-bg);
-   display: inline-block;
-   margin:.5rem 0;
-   border-radius: .5rem;
-   border:var(--border);
-   padding:.5rem 1.5rem;
-}
-
-.reviews .box-container .box .stars i{
-   font-size: 1.7rem;
-   color:var(--orange);
-   margin:.2rem;
-}
-
-.reviews .box-container .box h3{
-   font-size: 2rem;
    color:var(--black);
-   margin-top: 1rem;
-}
-.header .header-1{
-   background-color: var(--light-bg);
 }
 
-.header .header-1 .flex{
-   padding:2rem;
+.heading{
+   min-height: 30vh;
+   display: flex;
+   flex-flow: column;
+   align-items: center;
+   justify-content: center;
+   gap:1rem;
+   background: url(../images/heading-bg.webp) no-repeat;
+   background-size: cover;
+   background-position: center;
+   text-align: center;
+}
+
+.heading h3{
+   font-size: 5rem;
+   color:var(--black);
+   text-transform: uppercase;
+}
+
+.heading p{
+   font-size: 2.5rem;
+   color:var(--light-color);
+}
+
+.heading p a{
+   color:var(--purple);
+}
+
+.heading p a:hover{
+   text-decoration: underline;
+}
+
+@keyframes fadeIn {
+   0%{
+      transform: translateY(1rem);
+      opacity: .2s;
+   }
+}
+
+.form-container{
+   min-height: 100vh;
+   background-color: var(--light-bg);
    display: flex;
    align-items: center;
-   justify-content: space-between;
-   max-width: 1200px;
-   margin:0 auto;
+   justify-content: center;
+   padding:2rem;
 }
+
+.form-container form{
+   padding:2rem;
+   width: 50rem;
+   border-radius: .5rem;
+   box-shadow: var(--box-shadow);
+   border:var(--border);
+   background-color: var(--white);
+   text-align: center;
+}
+
+.form-container form h3{
+   font-size: 3rem;
+   margin-bottom: 1rem;
+   text-transform: uppercase;
+   color:var(--black);
+}
+
+.form-container form .box{
+   width: 100%;
+   border-radius: .5rem;
+   background-color: var(--light-bg);
+   padding:1.2rem 1.4rem;
+   font-size: 1.8rem;
+   color:var(--black);
+   border:var(--border);
+   margin:1rem 0;
+}
+
+.form-container form p{
+   padding-top: 1.5rem;
+   font-size: 2rem;
+   color:var(--black);
+}
+
+.form-container form p a{
+   color:var(--purple);
+}
+
+.form-container form p a:hover{
+   text-decoration: underline;
+}
+
 
 .header .header-2{
    background-color: var(--white);
@@ -338,6 +357,228 @@ section{
    color:var(--light-white);
    padding:1rem 0;
    line-height: 1.5;
+}
+
+.products .box-container{
+   max-width: 1200px;
+   margin:0 auto;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, 30rem);
+   align-items: flex-start;
+   gap:1.5rem;
+   justify-content: center;
+}
+
+.products .box-container .box{
+   border-radius: .5rem;
+   background-color: var(--white);
+   box-shadow: var(--box-shadow);
+   padding:2rem;
+   text-align: center;
+   border:var(--border);
+   position: relative;
+}
+
+.products .box-container .box .image{
+   height: 30rem;
+}
+
+.products .box-container .box .name{
+   padding:1rem 0;
+   font-size: 2rem;
+   color:var(--black);
+}
+
+.products .box-container .box .qty{
+   width: 100%;
+   padding:1.2rem 1.4rem;
+   border-radius: .5rem;
+   border:var(--border);
+   margin:1rem 0;
+   font-size: 2rem;
+}
+
+.products .box-container .box .price{
+   position: absolute;
+   top:1rem; left:1rem;
+   border-radius: .5rem;
+   padding:1rem;
+   font-size: 2.5rem;
+   color:var(--white);
+   background-color: var(--red);
+}
+
+.about .flex{
+   max-width: 1200px;
+   margin:0 auto;
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+}
+
+.about .flex .image{
+   flex:1 1 40rem;
+}
+
+.about .flex .image img{
+   width: 100%;
+}
+
+.about .flex .content{
+   flex:1 1 40rem;
+   padding:2rem;
+   background-color: var(--light-bg);
+}
+
+.about .flex .content h3{
+   font-size: 3rem;
+   color:var(--black);
+   text-transform: uppercase;
+}
+
+.about .flex .content p{
+   padding:1rem 0;
+   line-height: 2;
+   font-size: 1.7rem;
+   color:var(--light-color);
+}
+
+.home-contact{
+   background-color: var(--black);
+}
+
+.home-contact .content{
+   max-width: 60rem;
+   text-align: center;
+   margin:0 auto;
+}
+
+.home-contact .content h3{
+   font-size: 3rem;
+   text-transform: uppercase;
+   color:var(--white);
+}
+
+.home-contact .content p{
+   padding:1rem 0;
+   line-height: 1.5;
+   color:var(--light-white);
+   font-size: 1.7rem;
+}
+
+.reviews{
+   background-color: var(--light-bg);
+}
+
+.reviews .box-container{
+   max-width: 1200px;
+   margin:0 auto;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+   align-items: center;
+   gap:1.5rem;
+   justify-content: center;
+}
+
+.reviews .box-container .box{
+   background-color: var(--white);
+   box-shadow: var(--box-shadow);
+   border:var(--border);
+   border-radius: .5rem;
+   text-align: center;
+   padding:2rem;
+}
+
+.reviews .box-container .box img{
+   height: 10rem;
+   width: 10rem;
+   border-radius: 50%;
+}
+
+.reviews .box-container .box p{
+   padding:1rem 0;
+   line-height: 2;
+   color:var(--light-color);
+   font-size: 1.5rem;
+}
+
+.reviews .box-container .box .stars{
+   background-color: var(--light-bg);
+   display: inline-block;
+   margin:.5rem 0;
+   border-radius: .5rem;
+   border:var(--border);
+   padding:.5rem 1.5rem;
+}
+
+.reviews .box-container .box .stars i{
+   font-size: 1.7rem;
+   color:var(--orange);
+   margin:.2rem;
+}
+
+.reviews .box-container .box h3{
+   font-size: 2rem;
+   color:var(--black);
+   margin-top: 1rem;
+}
+
+.authors .box-container{
+   max-width: 1200px;
+   margin:0 auto;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+   align-items: center;
+   gap:1.5rem;
+   justify-content: center;
+}
+
+.authors .box-container .box{
+   position: relative;
+   text-align: center;
+   border:var(--border);
+   box-shadow: var(--box-shadow);
+   overflow: hidden;
+   border-radius: .5rem;
+}
+
+.authors .box-container .box img{
+   width: 100%;
+   height: 40rem;
+   object-fit: cover;
+}
+
+.authors .box-container .box .share{
+   position: absolute;
+   top:0; left:-10rem;
+}
+
+.authors .box-container .box:hover .share{
+   left: 1rem;
+}
+
+.authors .box-container .box .share a{
+   height: 4.5rem;
+   width: 4.5rem;
+   line-height: 4.5rem;
+   font-size: 2rem;
+   background-color: var(--white);
+   border:var(--border);
+   display: block;
+   margin-top: 1rem;
+   color:var(--black);
+}
+
+.authors .box-container .box .share a:hover{
+   background-color: var(--black);
+   color:var(--white);
+}
+
+.authors .box-container .box h3{
+   font-size: 2.5rem;
+   color:var(--black);
+   padding:1.5rem;
+   background-color: var(--white);
 }
 
 .contact form{
@@ -605,60 +846,4 @@ section{
    color:var(--black);
    background-color: var(--light-bg);
    border-radius: .5rem;
-}
-
-
-@media (max-width:991px){
-
-   html{
-      font-size: 55%;
-   }
-
-}
-
-@media (max-width:768px){
-
-   #menu-btn{
-      display: inline-block;
-   }
-
-   .header .header-2 .flex .navbar{
-      position: absolute;
-      top:99%; left:0; right:0;
-      background-color: var(--white);
-      border-top: var(--border);
-      border-bottom: var(--border);
-      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-   }
-
-   .header .header-2 .flex .navbar.active{
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-   }
-
-   .header .header-2 .flex .navbar a{
-      display: block;
-      font-size: 2.5rem;
-      margin:2rem;
-   }
-
-   .home .content h3{
-      font-size: 3.5rem;
-   }
-
-}
-
-@media (max-width:450px){
-
-   html{
-      font-size: 50%;
-   }
-
-   .heading h3{
-      font-size: 3.5rem;
-   }
-
-   .title{
-      font-size: 3rem;
-   }
-
 }

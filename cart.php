@@ -1,31 +1,45 @@
 <?php
-
 include 'config.php';
 
 session_start();
 
 $user_id = $_SESSION['user_id'];
 
-if(!isset($user_id)){
-   header('location:login.php');
+if (!isset($user_id)) {
+    header('location:login.php');
 }
 
-if(isset($_POST['update_cart'])){
-   $cart_id = $_POST['cart_id'];
-   $cart_quantity = $_POST['cart_quantity'];
-   mysqli_query($conn, "UPDATE `cart` SET quantity = '$cart_quantity' WHERE id = '$cart_id'") or die('query failed');
-   $message[] = 'cart quantity updated!';
+if (isset($_POST['update_cart'])) {
+    $cart_id = $_POST['cart_id'];
+    $cart_quantity = $_POST['cart_quantity'];
+    mysqli_query($conn, "UPDATE `cart` SET quantity = '$cart_quantity' WHERE id = '$cart_id'") or die('query failed');
+    $message[] = 'cart quantity updated!';
 }
 
-if(isset($_GET['delete'])){
-   $delete_id = $_GET['delete'];
-   mysqli_query($conn, "DELETE FROM `cart` WHERE id = '$delete_id'") or die('query failed');
-   header('location:cart.php');
+if (isset($_GET['delete'])) {
+    $delete_id = $_GET['delete'];
+    mysqli_query($conn, "DELETE FROM `cart` WHERE id = '$delete_id'") or die('query failed');
+    header('location:cart.php');
 }
 
-if(isset($_GET['delete_all'])){
-   mysqli_query($conn, "DELETE FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
-   header('location:cart.php');
+if (isset($_GET['delete_all'])) {
+    mysqli_query($conn, "DELETE FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
+    header('location:cart.php');
+}
+
+$grand_total = 0;
+$select_cart = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
+if (mysqli_num_rows($select_cart) > 0) {
+    while ($fetch_cart = mysqli_fetch_assoc($select_cart)) {
+        $sub_total = ($fetch_cart['quantity'] * $fetch_cart['price']);
+        $grand_total += $sub_total;
+    }
+}
+
+// Verificăm dacă totalul este mai mare sau egal cu 50$ și aplicăm reducerea
+if ($grand_total >= 50) {
+    $discount = $grand_total * 0.13;
+    $grand_total -= $discount;
 }
 
 ?>
@@ -99,7 +113,6 @@ if(isset($_GET['delete_all'])){
    </div>
 
 </section>
-
 <script src="js/script.js"></script>
 
 </body>

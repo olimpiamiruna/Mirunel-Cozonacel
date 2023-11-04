@@ -47,6 +47,7 @@ if(isset($_POST['add_to_cart'])){
 </head>
 <body>
    
+<?php include 'header.php'; ?>
 
 <div class="heading">
    <h3>our shop</h3>
@@ -83,11 +84,6 @@ if(isset($_POST['add_to_cart'])){
    </div>
 
 </section>
-
-
-
-
-
 
 <script src="js/script.js"></script>
 

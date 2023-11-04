@@ -152,7 +152,6 @@ if(isset($_POST['order_btn'])){
 
 </section>
 
-
 <script src="js/script.js"></script>
 
 </body>
